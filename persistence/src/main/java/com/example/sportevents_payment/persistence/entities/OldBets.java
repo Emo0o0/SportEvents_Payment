@@ -3,7 +3,9 @@ package com.example.sportevents_payment.persistence.entities;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.math.BigDecimal;
 import java.util.UUID;
+
 @Entity
 @Table
 @Getter
@@ -11,13 +13,17 @@ import java.util.UUID;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class BettingUserCard {
+public class OldBets {
+
 
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
-    @Column(unique = true)
     private String userId;
-    private Double amount;
+    private String bookmakerOfferId;
+    private BigDecimal betAmount;
+    private int pickedTeam;
+    private int teamWon;
+    private String odds;
 
 }
